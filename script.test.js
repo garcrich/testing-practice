@@ -1,5 +1,16 @@
 const googleSearch = require('./script');
 
-it('this is a test', () => {
-  console.log(googleSearch)
+dbMock = [
+  'dog.com',
+  'cheesepuff.com',
+  'disney.com',
+  'dogpictures.com'
+]
+
+it('is searching google', () => {
+  expect(googleSearch('testtest', dbMock))
+    .toEqual([])
+  
+  expect(googleSearch('dog', dbMock))
+    .toEqual(['dog.com', 'dogpictures.com'])
 })
